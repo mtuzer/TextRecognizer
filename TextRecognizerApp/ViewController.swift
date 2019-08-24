@@ -67,8 +67,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // start to extract texts on the image
         let extractor = TextExtractor(image: self.theImage, viewFrame: imageView.frame)
         extractor.extractTextBlocks { (textblocks) in
-            print(textblocks.count)
-            print(textblocks)
             var counter = 0
             textblocks.forEach({ (block) in
                 self.createButtonsAndTexts(blockFrame: block.frame, blockText: block.text, buttonTag: counter)
