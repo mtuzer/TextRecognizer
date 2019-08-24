@@ -15,30 +15,23 @@ struct TextBlock {
     var frame: CGRect
 }
 
-struct ExtractedTextBlock {
-    var textBlock: TextBlock
-}
-
 struct TextExtractor {
     var image: UIImage
     var viewFrame: CGRect
     
     fileprivate let imageProcessQueue = DispatchQueue(label: "com.miniLabs.TextRecognizerApp", qos: .background, attributes: [], autoreleaseFrequency: .inherit, target: .global())
     
-    
     func extractTextBlocks( completion: @escaping (_ blocks: [TextBlock]) -> () ) {
 
         imageProcessQueue.async {
-            
-            var extracted = [TextBlock]()
             
             let vision = Vision.vision()
             let textRecognizer = vision.onDeviceTextRecognizer()
             let visionImage = VisionImage(image: self.image)
             
+            var extracted = [TextBlock]()
             var texts = [String]()
             var frames = [CGRect]()
-            
             
             textRecognizer.process(visionImage) { (result, error) in
                 if let error = error {
@@ -52,8 +45,7 @@ struct TextExtractor {
                         block.lines.forEach({ (line) in
                             blockTexts.append(line.text + "\n")
                         })
-                        
-                        // 
+                        // create the text of the block considering lines in it
                         let theLinedText = blockTexts.reduce("",+)
                         
                         // calculate the frame with respect to view to be shown
