@@ -1,4 +1,4 @@
-# TextRecognizerApp
+# TextRecognizer
 
 It is a sample app to recognize text blocks on images benefiting Firebase ML Kit. The details for adding the API can be found <a href="https://firebase.google.com/docs/ml-kit/ios/recognize-text">here</a>.
 Also, the app must be configured from the <a href="https://firebase.google.com">Firebase Console</a>.
