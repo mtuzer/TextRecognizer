@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D0AB99DA231062A8005E40FC /* TextRecognizerApp */,
-				D0AB99FE23106391005E40FC /* TextExctractor */,
+				D0AB99FE23106391005E40FC /* TextExtractor */,
 				D0AB99F2231062AA005E40FC /* TextRecognizerAppTests */,
 				D0AB99D9231062A8005E40FC /* Products */,
 				93037A7E60AE7A2D751E33AE /* Pods */,
@@ -136,13 +136,13 @@
 			path = TextRecognizerAppTests;
 			sourceTree = "<group>";
 		};
-		D0AB99FE23106391005E40FC /* TextExctractor */ = {
+		D0AB99FE23106391005E40FC /* TextExtractor */ = {
 			isa = PBXGroup;
 			children = (
 				D0AB99FF231063C2005E40FC /* TextExtractor.swift */,
 				D0AB9A012310722D005E40FC /* imageExtension.swift */,
 			);
-			path = TextExctractor;
+			path = TextExtractor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0AB99F8231062AA005E40FC /* Build configuration list for PBXNativeTarget "TextRecognizerApp" */;
 			buildPhases = (
+				D07A47572313B0DE00B74262 /* ShellScript */,
 				FE7811B19554F0183B8A693E /* [CP] Check Pods Manifest.lock */,
 				D0AB99D4231062A8005E40FC /* Sources */,
 				D0AB99D5231062A8005E40FC /* Frameworks */,
@@ -376,6 +377,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TextRecognizerApp/Pods-TextRecognizerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D07A47572313B0DE00B74262 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		FE7811B19554F0183B8A693E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
